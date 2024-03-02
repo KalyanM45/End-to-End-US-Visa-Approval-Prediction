@@ -19,6 +19,7 @@ list_of_files = [
 
     # Configuration Module
     "src/Configuration/__init__.py",
+    "src/Configuration/MongoDB_Integration.py",
 
     # Constants Module
     "src/Constants/__init__.py",
