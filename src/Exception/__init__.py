@@ -1,5 +1,6 @@
 import os
 import sys
+from src.Logger import logging
 
 def error_message_detail(error, error_detail:sys):
     # Retreiving TraceBack information
@@ -7,7 +8,8 @@ def error_message_detail(error, error_detail:sys):
     _, _, exc_tb = error_detail.exc_info()
     # Extracting file name, line number and error message
     file_name = exc_tb.tb_frame.f_code.co_filename
-    ermsg = f"Error in Script: {file_name} - Line: {exc_tb.tb_lineno} - Error message: {str(error)}" 
+    ermsg = f"Error in Script: {file_name} - Line: {exc_tb.tb_lineno} - Message: {str(error)}" 
+    logging.info(ermsg)
     return ermsg
 
 class CustomException(Exception):
@@ -18,3 +20,5 @@ class CustomException(Exception):
 
     def __str__(self):
         return self.error_message
+    
+    
