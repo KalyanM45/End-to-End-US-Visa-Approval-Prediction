@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 from typing import Optional
 
+from src.Logger import logging
 from src.Constants import DATABASE_NAME
 from src.Exception import CustomException
 from src.Configuration.MongoDB_Integration import MongoDBClient
@@ -29,6 +30,8 @@ class USvisaData:
             if "_id" in df.columns.to_list():
                 df = df.drop(columns=["_id"], axis=1)
             df.replace({"na":np.nan},inplace=True)
+            logging.info("Exported Collection as a DataFrame from MongoDB.")
             return df
+        
         except Exception as e:
             raise CustomException(e,sys)
