@@ -12,8 +12,8 @@ ARTIFACT_DIR: str = "Artifacts"
 PIPELINE_NAME: str = "US_VISA"
 
 # Model Constants
-MODEL_FILE_NAME = "USVisa_Model.pkl"
-PREPROCSSING_OBJECT_FILE_NAME = "USVisa_Preprocessor.pkl"
+MODEL_FILE_NAME = "Model.pkl"
+PREPROCSSING_OBJECT_FILE_NAME = "Preprocessor.pkl"
 
 # Feature Constants
 TARGET_COLUMN = "case_status"
@@ -30,18 +30,17 @@ DATA_INGESTION_FEATURE_STORE_DIR: str = "Feature_Store"
 DATA_INGESTION_INGESTED_DIR: str = "Ingested_Data"
 
 # Data Validation Constants
-DATA_VALIDATION_DIR_NAME: str = "Data_Validation"
+DATA_VALIDATION_DIR_NAME: str = "Data_Validation_Artifacts"
 DATA_VALIDATION_DRIFT_REPORT_DIR: str = "Drift_Report"
 DATA_VALIDATION_DRIFT_REPORT_FILE_NAME: str = "Report.yaml"
 
 # Data Transformation Constants
-DATA_TRANSFORMATION_DIR_NAME: str = "data_transformation"
-DATA_TRANSFORMATION_TRANSFORMED_DATA_DIR: str = "transformed"
-DATA_TRANSFORMATION_TRANSFORMED_OBJECT_DIR: str = "transformed_object"
+DATA_TRANSFORMATION_DIR_NAME: str = "Data_Transformation_Artifacts"
+DATA_TRANSFORMATION_TRANSFORMED_DATA_DIR: str = "Transformed_Data"
+DATA_TRANSFORMATION_TRANSFORMED_OBJECT_DIR: str = "Processing_Objects"
 
 # Model Trainer Constants
-MODEL_TRAINER_DIR_NAME: str = "Model_trainer"
-MODEL_TRAINER_TRAINED_MODEL_DIR: str = "Trained_model"
+MODEL_TRAINER_DIR_NAME: str = "Model_Training_Artifacts"
 MODEL_TRAINER_TRAINED_MODEL_NAME: str = "Model.pkl"
 MODEL_TRAINER_EXPECTED_SCORE: float = 0.7
 MODEL_TRAINER_MODEL_CONFIG_FILE_PATH: str = os.path.join("Config", "Model.yaml")

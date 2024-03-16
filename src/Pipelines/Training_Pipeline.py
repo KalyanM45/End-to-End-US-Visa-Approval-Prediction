@@ -1,8 +1,10 @@
 import warnings
 warnings.filterwarnings("ignore")
+
 import sys
-from src.Exception import CustomException
 from src.Logger import logging
+from src.Exception import CustomException
+
 
 from src.Components.Data_Ingestion import DataIngestion
 from src.Components.Data_Validation import DataValidation
@@ -14,6 +16,7 @@ from src.Components.Model_Pusher import ModelPusher
 from src.Entity.Config_Entity import (DataIngestionConfig, DataValidationConfig, 
                                       DataTransformationConfig, ModelTrainerConfig,
                                       ModelEvaluationConfig, ModelPusherConfig)
+
 from src.Entity.Artifact_Entity import (DataIngestionArtifact, DataValidationArtifact, 
                                         DataTransformationArtifact, ModelTrainerArtifact,
                                         ModelEvaluationArtifact, ModelPusherArtifact)
@@ -126,7 +129,7 @@ class TrainPipeline:
         """
         try:
             data_ingestion_artifact = self.start_data_ingestion()
-            '''data_validation_artifact = self.start_data_validation(data_ingestion_artifact=data_ingestion_artifact)
+            data_validation_artifact = self.start_data_validation(data_ingestion_artifact=data_ingestion_artifact)
             data_transformation_artifact = self.start_data_transformation(
                 data_ingestion_artifact=data_ingestion_artifact, data_validation_artifact=data_validation_artifact)
             model_trainer_artifact = self.start_model_trainer(data_transformation_artifact=data_transformation_artifact)
@@ -136,7 +139,7 @@ class TrainPipeline:
             if not model_evaluation_artifact.is_model_accepted:
                 logging.info(f"Model not accepted.")
                 return None
-            model_pusher_artifact = self.start_model_pusher(model_evaluation_artifact=model_evaluation_artifact)'''
+            model_pusher_artifact = self.start_model_pusher(model_evaluation_artifact=model_evaluation_artifact)
         
         except Exception as e:
             raise CustomException(e, sys)
